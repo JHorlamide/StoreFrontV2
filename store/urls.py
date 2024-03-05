@@ -5,9 +5,9 @@ router = routers.DefaultRouter()
 
 # Parent Domain Routes
 router.register("products", views.ProductViewSet, basename="products")
+router.register("customers", views.CustomerViewSet)
 router.register("collections", views.CollectionViewSet)
 router.register("carts", views.CartViewSet, basename="cart")
-router.register("customers", views.CustomerViewSet)
 router.register("orders", views.OrderViewSet, basename="orders")
 
 # Product Child Router
@@ -27,4 +27,4 @@ urlpatterns = router.urls + products_router.urls + carts_router.urls
 #   path("products/<int:pk>/", views.ProductDetails.as_view()),
 #   path("collections/", views.CollectionList.as_view()),
 #   path("collections/<int:pk>", views.CollectionDetails.as_view())
-# ] 
+# ]
